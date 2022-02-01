@@ -1,0 +1,6 @@
+<mat-form-field>
+    <mat-label>Nouveau nom de Tâche</mat-label>
+    <input matInput type="text" #newTask>
+</mat-form-field>
+<button mat-raised-button color="primary" mat-dialog-close>annuler</button>
+<button mat-raised-button color="primary" [mat-dialog-close]="newTask.value"> valider</button>

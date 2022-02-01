@@ -3,14 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ToutoulistModule } from './toutoulist/toutoulist.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CompteRenduComponent } from './toutoulist/containers/compte-rendu/compte-rendu.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ToutoulistModule,
+    NoopAnimationsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
