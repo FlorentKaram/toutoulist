@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToutoulistModule } from './toutoulist/toutoulist.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { CompteRenduComponent } from './toutoulist/containers/compte-rendu/compte-rendu.component';
+import { CompteRenduComponent } from './toutoulist/components/compte-rendu/compte-rendu.component';
 
 
 @NgModule({

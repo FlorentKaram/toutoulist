@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogModifieComponent } from '../../components/dialog-modifie/dialog-modifie.component';
+import { Subscription } from 'rxjs';
 import { ToutouliService } from '../../services/toutoulistservices.service';
 
 @Component({
@@ -8,15 +8,25 @@ import { ToutouliService } from '../../services/toutoulistservices.service';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, OnDestroy {
 
-  task_list: string[];
+  task_list: string[] = [];
+  task_list_Subscription!: Subscription;
+
   constructor(public dialog : MatDialog, public toutouservices : ToutouliService) {
-    this.task_list = toutouservices.task_list;
   }
 
-  ngOnInit(): void {
 
+  ngOnInit(): void {
+    this.task_list_Subscription = this.toutouservices.task_list$.subscribe((tasks : string[]) => {
+      this.task_list = tasks;
+    })
+  }
+
+  ngOnDestroy(): void {
+    if(this.task_list_Subscription){
+      this.task_list_Subscription.unsubscribe();
+    }
   }
 
   openDialog(value : string){
@@ -29,5 +39,4 @@ export class MainPageComponent implements OnInit {
   remove_task(value: string) {
     this.toutouservices.remove_task(value);
   }
-
 }

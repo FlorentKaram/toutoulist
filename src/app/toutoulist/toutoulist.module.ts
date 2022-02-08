@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox'
+import { CompteRenduComponent } from "./components/compte-rendu/compte-rendu.component";
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
         MainPageComponent,
         TaskComponent,
         DialogModifieComponent,
+        CompteRenduComponent
     ],
     entryComponents : [DialogModifieComponent],
     providers : [
