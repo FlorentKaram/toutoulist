@@ -10,12 +10,21 @@ h1{
     flex-direction: column;
 }
 .task{
-    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
     border: 2px solid #3700b3;
     border-radius: 15px;
-
+    flex-wrap: wrap;
 }
 
 #main-page *{
     margin: 20px;
+}
+.newtask{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
 }
